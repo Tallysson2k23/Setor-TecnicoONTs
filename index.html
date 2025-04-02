@@ -12,7 +12,9 @@
                 mensagem.innerText = " Copiado!";
                 mensagem.style.color = "green";
                 mensagem.style.fontSize = "14px";
-                botao.parentNode.appendChild(mensagem);
+                mensagem.style.marginLeft = "5px";
+                
+                botao.parentNode.insertBefore(mensagem, botao.nextSibling);
                 
                 setTimeout(() => {
                     mensagem.remove();

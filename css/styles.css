@@ -65,16 +65,46 @@ h1 {
     padding: 15px;
 }
 
+/* Estilo do título da ONT */
 .info h2 {
     color: #333;
     font-size: 1.2rem;
     margin: 0;
 }
 
+/* Ajustes para o parágrafo de login e senha */
 .info p {
     color: #777;
     font-size: 0.9rem;
     margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilo do botão de cópia */
+.info button {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito no hover do botão de cópia */
+.info button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo da mensagem "Copiado!" */
+.info span {
+    color: green;
+    font-size: 14px;
+    margin-left: 5px;
 }
 
 /* Responsividade para telas pequenas */

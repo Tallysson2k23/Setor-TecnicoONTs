@@ -78,16 +78,17 @@ h1 {
     font-size: 0.9rem;
     margin-top: 5px;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* Faz com que LOGIN e SENHA fiquem um embaixo do outro */
+    gap: 10px; /* Espaço entre LOGIN e SENHA */
+    align-items: flex-start;
 }
 
 /* Estilo do botão de cópia */
 .info button {
     margin-left: 10px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
+    background-color: transparent; /* Remove a cor verde */
+    border: 1px solid #ccc; /* Borda cinza */
+    color: #333; /* Cor do texto */
     padding: 5px 10px;
     cursor: pointer;
     font-size: 16px;
@@ -97,7 +98,7 @@ h1 {
 
 /* Efeito no hover do botão de cópia */
 .info button:hover {
-    background-color: #45a049;
+    background-color: #f1f1f1; /* Efeito de fundo quando o botão é clicado */
 }
 
 /* Estilo da mensagem "Copiado!" */

@@ -3,179 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACESSO DAS NOSSAS ONTs</title>
+    <title>ACESSO DAS NOSSAS ONT's</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function copiarTexto(texto, botao) {
+            navigator.clipboard.writeText(texto).then(() => {
+                let mensagem = document.createElement('span');
+                mensagem.innerText = " Copiado!";
+                mensagem.style.color = "green";
+                mensagem.style.fontSize = "14px";
+                mensagem.style.marginLeft = "5px";
+                
+                botao.parentNode.appendChild(mensagem);
+                
+                setTimeout(() => {
+                    mensagem.remove();
+                }, 1500);
+            }).catch(err => {
+                console.error("Erro ao copiar", err);
+            });
+        }
+    </script>
     <style>
-        /* Barra superior centralizada */
-        .ip-bar {
-            background: #f7f9fb;
-            border-bottom: 1px solid #e0e6ea;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .ip-bar .input-area {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .ip-bar strong {
-            font-size: 16px;
-        }
-
-        .ip-bar input[type="text"] {
-            padding: 8px 10px;
-            border: 1px solid #cfd8dc;
-            border-radius: 6px;
-            min-width: 220px;
-            text-align: center;
-        }
-
-        .ip-bar button {
-            padding: 8px 14px;
-            border-radius: 6px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .ip-bar .actions button {
-            background: #0b74de;
-            color: #fff;
-        }
-
-        .note {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .ip-links-table {
-            width: 100%;
-            max-width: 720px;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .ip-links-table th, .ip-links-table td {
-            padding: 8px 10px;
-            border: 1px solid #e6eef6;
-            text-align: center;
-        }
-
-        .ip-links-table th {
-            background: #f0f6fb;
-        }
-
-        .ip-links-table td .btn {
-            margin-left: 6px;
-            padding: 6px 10px;
-            border-radius: 6px;
-            border: none;
-            cursor: pointer;
-        }
-
         .info p {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
         .info p strong {
             width: 60px;
             text-align: right;
         }
-
         .info button {
             margin-left: 10px;
         }
     </style>
-    <script>
-        function copiarTexto(texto, botao) {
-            navigator.clipboard.writeText(texto).then(() => {
-                const mensagem = document.createElement('span');
-                mensagem.innerText = " Copiado!";
-                mensagem.style.color = "green";
-                mensagem.style.fontSize = "14px";
-                mensagem.style.marginLeft = "8px";
-                botao.parentNode.appendChild(mensagem);
-                setTimeout(() => { mensagem.remove(); }, 1400);
-            }).catch(err => {
-                console.error('Erro ao copiar', err);
-                alert('Erro ao copiar para a área de transferência');
-            });
-        }
-
-        function gerarLinks() {
-            const input = document.getElementById('ipInput');
-            const ip = input.value.trim();
-            if(!ip) {
-                input.focus();
-                return alert('Informe o endereço IP da ONT (ex: 192.168.1.100)');
-            }
-
-            const variations = [
-                ip,
-                ip + ':8080',
-                ip + '/config',
-                ip + '/login.html',
-                ip + '/config.html'
-            ];
-
-            for(let i = 0; i < 5; i++) {
-                const linkElem = document.getElementById('link-' + (i + 1));
-                linkElem.href = (variations[i].startsWith('http') ? variations[i] : 'http://' + variations[i]);
-                linkElem.innerText = variations[i];
-
-                const copyBtn = document.getElementById('copy-' + (i + 1));
-                copyBtn.onclick = (e) => { copiarTexto(variations[i], e.currentTarget); };
-
-                const openBtn = document.getElementById('open-' + (i + 1));
-                openBtn.onclick = () => { window.open(linkElem.href, '_blank'); };
-            }
-        }
-
-        function ipKeyPress(e) {
-            if (e.key === 'Enter') gerarLinks();
-        }
-    </script>
 </head>
 <body>
-    <div class="ip-bar">
-        <div class="input-area">
-            <strong>Endereço IP:</strong>
-            <input id="ipInput" type="text" placeholder="ex: 192.168.1.100" onkeypress="ipKeyPress(event)">
-            <div class="actions">
-                <button onclick="gerarLinks()">Gerar links</button>
-            </div>
-        </div>
-        <div class="note">Dica: tente primeiro <em>somente o IP</em>. Se não abrir, experimente as variações abaixo (1º → 5º).</div>
-        <table class="ip-links-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1º</td><td><a id="link-1" href="#">-</a></td><td><button id="open-1" class="btn">Abrir</button><button id="copy-1" class="btn">Copiar</button></td></tr>
-                <tr><td>2º</td><td><a id="link-2" href="#">-</a></td><td><button id="open-2" class="btn">Abrir</button><button id="copy-2" class="btn">Copiar</button></td></tr>
-                <tr><td>3º</td><td><a id="link-3" href="#">-</a></td><td><button id="open-3" class="btn">Abrir</button><button id="copy-3" class="btn">Copiar</button></td></tr>
-                <tr><td>4º</td><td><a id="link-4" href="#">-</a></td><td><button id="open-4" class="btn">Abrir</button><button id="copy-4" class="btn">Copiar</button></td></tr>
-                <tr><td>5º</td><td><a id="link-5" href="#">-</a></td><td><button id="open-5" class="btn">Abrir</button><button id="copy-5" class="btn">Copiar</button></td></tr>
-            </tbody>
-        </table>
-    </div>
-
- <div class="container">
+    <div class="container">
         <h1>ACESSO DAS NOSSAS ONTs</h1>
         <div class="gallery">
             <div class="gallery-item">

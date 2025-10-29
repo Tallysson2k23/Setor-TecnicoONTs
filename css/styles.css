@@ -119,3 +119,32 @@ h1 {
         width: 90%;
     }
 }
+
+/* Centraliza toda a área da barra de IP */
+.ip-bar {
+    background: #f7f9fb;
+    border-bottom: 1px solid #e0e6ea;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centraliza horizontalmente */
+    justify-content: center;
+    text-align: center;
+}
+
+/* Centraliza a tabela de IP e limita a largura */
+.ip-links-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    margin: 10px auto;  /* Centraliza horizontalmente */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    background: #fff;
+}
+
+/* Estilo leve para células */
+.ip-links-table th, .ip-links-table td {
+    padding: 8px 10px;
+    border: 1px solid #e6eef6;
+    text-align: center;
+}

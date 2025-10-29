@@ -148,7 +148,16 @@
     </script>
 </head>
 <body>
-    <div class="ip-bar">
+    <!-- Botão para mostrar/ocultar -->
+    <div style="text-align:center; margin-top: 20px;">
+        <button onclick="togglePesquisa()" id="btnToggle"
+                style="background:#0b74de; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer;">
+            🔍 Mostrar pesquisa de IP
+        </button>
+    </div>
+
+    <!-- Barra de pesquisa OCULTA por padrão -->
+    <div class="ip-bar" id="ipBar" style="display: none; margin-top: 10px;">
         <div class="input-area">
             <strong>Endereço IP:</strong>
             <input id="ipInput" type="text" placeholder="ex: 192.168.1.100" onkeypress="ipKeyPress(event)">
@@ -175,8 +184,36 @@
         </table>
     </div>
 
- <div class="container">
+    <div class="container">
+
         <h1>ACESSO DAS NOSSAS ONTs</h1>
+
+
+                <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://i.postimg.cc/tJKX4fNS/Whats-App-Image-2025-10-29-at-15-02-51-1.jpg" alt="Imagem 1">
+                <div class="info">
+                    <h2>NOKIA - NOVA INTERFACE</h2>
+                    <p><strong>LOGIN:</strong> AdminGPON <button onclick="copiarTexto('AdminGPON', this)">📋</button></p>
+                    <p><strong>SENHA:</strong> ALC#FGU <button onclick="copiarTexto('ALC#FGU', this)">📋</button></p>
+                    <p><strong>WI-FI:</strong>  Nokia_WIFI_ </p>
+                    <p><strong>SENHA:</strong> 12345678 <button onclick="copiarTexto('12345678', this)">📋</button></p>
+                    <p style="color: rgb(155, 47, 47);">Ou wi-fi e senha da parte de trás da ont</p>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="gallery">
             <div class="gallery-item">
                 <img src="https://i.postimg.cc/GtyYrqdj/Whats-App-Image-2025-04-01-at-14-57-02.jpg" alt="Imagem 1">
@@ -285,5 +322,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+function togglePesquisa() {
+    const ipBar = document.getElementById("ipBar");
+    const btn = document.getElementById("btnToggle");
+    if (ipBar.style.display === "none") {
+        ipBar.style.display = "block";
+        btn.innerText = "🔽 Ocultar pesquisa de IP";
+    } else {
+        ipBar.style.display = "none";
+        btn.innerText = "🔍 Mostrar pesquisa de IP";
+    }
+}
+</script>
+
 </body>
 </html>

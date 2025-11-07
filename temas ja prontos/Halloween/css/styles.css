@@ -1,0 +1,280 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tema Halloween */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%);
+  color: #f5f5f5;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff7518;
+  text-shadow: 0 0 10px #ff7518, 0 0 20px #b34700;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+/* Botões */
+button {
+  font-family: inherit;
+}
+
+/* Galeria */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Cards */
+.gallery-item {
+  background: #1c1c1c;
+  border: 2px solid #ff7518;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 117, 24, 0.3);
+  overflow: hidden;
+  width: calc(33.333% - 25px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 117, 24, 0.6);
+}
+
+/* Imagens */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ff7518;
+}
+
+/* Informações */
+.info {
+  padding: 15px;
+}
+
+.info h2 {
+  color: #ffb347;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #ff7518;
+}
+
+.info p {
+  color: #ddd;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.info strong {
+  color: #ff7518;
+}
+
+/* Botão copiar */
+.info button {
+  margin-left: 10px;
+  background-color: #ff7518;
+  border: none;
+  color: #fff;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.info button:hover {
+  background-color: #ff944d;
+  transform: scale(1.1);
+}
+
+/* Barra de IP */
+.ip-bar {
+  background: #1c1c1c;
+  border-bottom: 1px solid #ff7518;
+  padding: 20px;
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.ip-bar input {
+  background: #0d0d0d;
+  border: 1px solid #ff7518;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.ip-bar button {
+  background: #ff7518;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.3s;
+}
+
+.ip-bar button:hover {
+  background: #ff944d;
+}
+
+/* Tabela de IPs */
+.ip-links-table {
+  width: 100%;
+  max-width: 720px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.ip-links-table th,
+.ip-links-table td {
+  padding: 10px;
+  border: 1px solid #ff7518;
+}
+
+.ip-links-table th {
+  background: #ff7518;
+  color: #000;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .gallery-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-item {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Rodapé (créditos) */
+footer {
+  background: #0d0d0d;
+  text-align: center;
+  padding: 15px 0;
+  color: #ffb347;
+  font-size: 0.9rem;
+  border-top: 1px solid #ff7518;
+  margin-top: 40px;
+}
+
+footer span {
+  color: #ff7518;
+  text-shadow: 0 0 5px #ff7518;
+}
+
+/* === DECORAÇÕES HALLOWEEN === */
+
+/* Abóboras fixas nos cantos */
+.pumpkin {
+  position: fixed;
+  font-size: 2.5rem;
+  z-index: 10;
+  animation: floatPumpkin 6s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+.pumpkin.left {
+  top: 20px;
+  left: 20px;
+}
+
+.pumpkin.right {
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 2s;
+}
+
+/* Morcegos voando */
+.bat {
+  position: fixed;
+  top: 60px;
+  font-size: 2rem;
+  animation: flyBat 12s linear infinite;
+  z-index: 5;
+  opacity: 0.8;
+}
+
+.bat:nth-child(1) {
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.bat:nth-child(2) {
+  left: -80px;
+  top: 120px;
+  animation-delay: 4s;
+}
+
+.bat:nth-child(3) {
+  left: -100px;
+  top: 180px;
+  animation-delay: 8s;
+}
+
+/* Teias no canto superior */
+.web {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 2.2rem;
+  color: #ff7518;
+  opacity: 0.7;
+  transform: rotate(20deg);
+}
+
+/* Animações */
+@keyframes floatPumpkin {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes flyBat {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(110vw) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(-10deg);
+  }
+}

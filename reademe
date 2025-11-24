@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACESSO DAS NOSSAS ONTs</title>
-        <!-- 🔹 Adicione AQUI a fonte Poppins -->
+    <title>🎄 ACESSO DAS NOSSAS ONTs - Natal 2025 🎅</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- 🔹 Depois vem o seu CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Barra superior centralizada */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #000000, #fff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de neve */
+        @keyframes snow {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: snow 10s linear infinite;
+        }
+
+        /* Barra de topo */
         .ip-bar {
-            background: #f7f9fb;
-            border-bottom: 1px solid #e0e6ea;
+            background: #fef9f9;
+            border-bottom: 2px solid #c62828;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-        }
-
-        .ip-bar .input-area {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .ip-bar strong {
-            font-size: 16px;
         }
 
         .ip-bar input[type="text"] {
@@ -44,142 +48,172 @@
             text-align: center;
         }
 
-        .ip-bar button {
+        .ip-bar .actions button {
+            background: #c62828;
+            color: white;
             padding: 8px 14px;
             border-radius: 6px;
             border: none;
             cursor: pointer;
         }
 
-        .ip-bar .actions button {
-            background: #0b74de;
-            color: #fff;
+        .ip-bar .actions button:hover {
+            background: #b71c1c;
         }
 
         .note {
             font-size: 13px;
             color: #555;
-            margin-bottom: 10px;
         }
 
         .ip-links-table {
             width: 100%;
             max-width: 720px;
+            margin: 10px auto;
             border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        .ip-links-table th, .ip-links-table td {
-            padding: 8px 10px;
-            border: 1px solid #e6eef6;
-            text-align: center;
         }
 
         .ip-links-table th {
-            background: #f0f6fb;
+            background: #ffebee;
+            color: #b71c1c;
         }
 
-        .ip-links-table td .btn {
-            margin-left: 6px;
+        .ip-links-table th, .ip-links-table td {
+            border: 1px solid #f8bbd0;
+            padding: 8px;
+        }
+
+        .ip-links-table .btn {
+            background: #388e3c;
+            color: white;
+            border: none;
             padding: 6px 10px;
             border-radius: 6px;
-            border: none;
             cursor: pointer;
         }
 
-        .info p {
+        .ip-links-table .btn:hover {
+            background: #2e7d32;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b71c1c;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #ffccbc;
+        }
+
+        .gallery {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 270px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 3px solid #c62828;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .info h2 {
+            font-size: 16px;
+            color: #2e7d32;
+            margin-bottom: 10px;
         }
 
         .info p strong {
-            width: 60px;
-            text-align: right;
+            color: #c62828;
         }
 
-        .info button {
-            margin-left: 10px;
+        button {
+            cursor: pointer;
+        }
+
+        #btnToggle {
+            background: #2e7d32;
+            color: rgb(245, 236, 236);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #btnToggle:hover {
+            background: #1b5e20;
+        }
+
+        footer {
+            text-align: center;
+            background: #c62828;
+            color: rgb(248, 246, 246);
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        footer span {
+            color: #ebdf7b;
+            font-weight: bold;
+        }
+
+        /* Decorações */
+        .tree {
+            position: fixed;
+            font-size: 2.2rem;
+            top: 10px;
+            animation: swing 4s ease-in-out infinite;
+        }
+
+        .tree.left { left: 10px; }
+        .tree.right { right: 10px; }
+
+        @keyframes swing {
+            0%,100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
         }
     </style>
-    <script>
-        function copiarTexto(texto, botao) {
-            navigator.clipboard.writeText(texto).then(() => {
-                const mensagem = document.createElement('span');
-                mensagem.innerText = " Copiado!";
-                mensagem.style.color = "green";
-                mensagem.style.fontSize = "14px";
-                mensagem.style.marginLeft = "8px";
-                botao.parentNode.appendChild(mensagem);
-                setTimeout(() => { mensagem.remove(); }, 1400);
-            }).catch(err => {
-                console.error('Erro ao copiar', err);
-                alert('Erro ao copiar para a área de transferência');
-            });
-        }
-
-        function gerarLinks() {
-            const input = document.getElementById('ipInput');
-            const ip = input.value.trim();
-            if(!ip) {
-                input.focus();
-                return alert('Informe o endereço IP da ONT (ex: 192.168.1.100)');
-            }
-
-            const variations = [
-                ip,
-                ip + ':8080',
-                ip + '/config',
-                ip + '/login.html',
-                ip + '/config.html'
-            ];
-
-            for(let i = 0; i < 5; i++) {
-                const linkElem = document.getElementById('link-' + (i + 1));
-                linkElem.href = (variations[i].startsWith('http') ? variations[i] : 'http://' + variations[i]);
-                linkElem.innerText = variations[i];
-
-                const copyBtn = document.getElementById('copy-' + (i + 1));
-                copyBtn.onclick = (e) => { copiarTexto(variations[i], e.currentTarget); };
-
-                const openBtn = document.getElementById('open-' + (i + 1));
-                openBtn.onclick = () => { window.open(linkElem.href, '_blank'); };
-            }
-        }
-
-        function ipKeyPress(e) {
-            if (e.key === 'Enter') gerarLinks();
-        }
-    </script>
 </head>
 <body>
-    <!-- Botão para mostrar/ocultar -->
     <div style="text-align:center; margin-top: 20px;">
-<button onclick="togglePesquisa()" id="btnToggle"
-        style="background:#ff7518; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer;">
-    🔍 Mostrar pesquisa de IP
-</button>
-
-
+        <button onclick="togglePesquisa()" id="btnToggle">🎁 Mostrar pesquisa de IP</button>
     </div>
 
-    <!-- Barra de pesquisa OCULTA por padrão -->
+    
     <div class="ip-bar" id="ipBar" style="display: none; margin-top: 10px;">
         <div class="input-area">
-            <strong>Endereço IP:</strong>
+            <strong>🎄 Endereço IP:</strong>
             <input id="ipInput" type="text" placeholder="ex: 192.168.1.100" onkeypress="ipKeyPress(event)">
             <div class="actions">
                 <button onclick="gerarLinks()">Gerar links</button>
             </div>
         </div>
-        <div class="note">Dica: tente primeiro <em>somente o IP</em>. Se não abrir, experimente as variações abaixo (1º → 5º).</div>
+        <div class="note">Dica: tente primeiro <em>somente o IP</em>. Se não abrir, experimente as variações abaixo 🎅</div>
+
         <table class="ip-links-table">
             <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
-                </tr>
+                <tr><th>#</th><th>Endereço</th><th>Ações</th></tr>
             </thead>
             <tbody>
                 <tr><td>1º</td><td><a id="link-1" href="#">-</a></td><td><button id="open-1" class="btn">Abrir</button><button id="copy-1" class="btn">Copiar</button></td></tr>
@@ -192,7 +226,6 @@
     </div>
 
     <div class="container">
-
         <h1>ACESSO DAS NOSSAS ONTs</h1>
 
                 <div class="gallery">
@@ -342,20 +375,68 @@ function togglePesquisa() {
     }
 }
 </script>
-<!-- 🎃 Decorações Halloween -->
-<div class="pumpkin left">🎃</div>
-<div class="pumpkin right">🎃</div>
-<div class="web">🕸️</div>
 
-<div class="bat">🦇</div>
-<div class="bat">🦇</div>
-<div class="bat">🦇</div>
+    <!-- 🎄 Árvores laterais -->
+    <div class="tree left">🎄</div>
+    <div class="tree right">🎄</div>
 
+    <!-- ❄️ Neve animada -->
+    <script>
+        // Função do botão
+        function togglePesquisa() {
+            const ipBar = document.getElementById("ipBar");
+            const btn = document.getElementById("btnToggle");
+            if (ipBar.style.display === "none") {
+                ipBar.style.display = "block";
+                btn.innerText = "🔽 Ocultar pesquisa de IP";
+            } else {
+                ipBar.style.display = "none";
+                btn.innerText = "🎁 Mostrar pesquisa de IP";
+            }
+        }
 
+        function copiarTexto(texto, botao) {
+            navigator.clipboard.writeText(texto).then(() => {
+                const msg = document.createElement("span");
+                msg.innerText = " Copiado!";
+                msg.style.color = "green";
+                msg.style.marginLeft = "8px";
+                botao.parentNode.appendChild(msg);
+                setTimeout(() => msg.remove(), 1400);
+            });
+        }
 
-<footer>
-    <p>🎃 Desenvolvido com javaScrip e criatividade por <span>Tallysson luis</span> | Tema Halloween 2025 🎃</p>
-</footer>
+        function gerarLinks() {
+            const input = document.getElementById('ipInput');
+            const ip = input.value.trim();
+            if(!ip) return alert('Informe o endereço IP da ONT');
+            const variations = [ip, ip + ':8080', ip + '/config', ip + '/login.html', ip + '/config.html'];
+            for(let i = 0; i < 5; i++) {
+                const link = document.getElementById('link-' + (i+1));
+                const href = 'http://' + variations[i];
+                link.href = href;
+                link.innerText = variations[i];
+                document.getElementById('open-' + (i+1)).onclick = () => window.open(href, '_blank');
+                document.getElementById('copy-' + (i+1)).onclick = (e) => copiarTexto(variations[i], e.currentTarget);
+            }
+        }
 
+        // Efeito neve
+        const snowCount = 30;
+        for(let i=0; i<snowCount; i++) {
+            const snow = document.createElement("div");
+            snow.classList.add("snowflake");
+            snow.innerHTML = "";
+            snow.style.left = Math.random() * 100 + "vw";
+            snow.style.animationDuration = 8 + Math.random()*6 + "s";
+            snow.style.fontSize = (Math.random()*10 + 10) + "px";
+            snow.style.animationDelay = Math.random()*5 + "s";
+            document.body.appendChild(snow);
+        }
+    </script>
+
+    <footer>
+        <p>🎅 Desenvolvido com JavaScript e espírito natalino por <span>Tallysson Luis</span> | Natal 2025 🎁</p>
+    </footer>
 </body>
 </html>

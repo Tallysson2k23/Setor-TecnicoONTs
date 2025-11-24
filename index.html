@@ -17,7 +17,6 @@
             overflow-x: hidden;
         }
 
-        /* Efeito de neve */
         @keyframes snow {
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(100vh); opacity: 0; }
@@ -32,7 +31,6 @@
             animation: snow 10s linear infinite;
         }
 
-        /* Barra de topo */
         .ip-bar {
             background: #fef9f9;
             border-bottom: 2px solid #c62828;
@@ -90,6 +88,7 @@
             padding: 6px 10px;
             border-radius: 6px;
             cursor: pointer;
+            margin-right: 6px;
         }
 
         .ip-links-table .btn:hover {
@@ -100,9 +99,10 @@
             text-align: center;
             color: #b71c1c;
             margin-top: 20px;
-            text-shadow: 0 0 10px #ffccbc;
+            text-shadow: 0 0 10px #7e574c;
         }
 
+        /* GALERIA */
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -111,7 +111,6 @@
             margin: 30px auto;
             max-width: 1200px;
         }
-
         .gallery-item {
             background: white;
             border-radius: 16px;
@@ -138,20 +137,6 @@
             text-align: center;
         }
 
-        .info h2 {
-            font-size: 16px;
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-
-        .info p strong {
-            color: #c62828;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
         #btnToggle {
             background: #2e7d32;
             color: rgb(245, 236, 236);
@@ -159,10 +144,6 @@
             padding: 10px 20px;
             border-radius: 6px;
             cursor: pointer;
-        }
-
-        #btnToggle:hover {
-            background: #1b5e20;
         }
 
         footer {
@@ -173,12 +154,6 @@
             margin-top: 40px;
         }
 
-        footer span {
-            color: #ebdf7b;
-            font-weight: bold;
-        }
-
-        /* Decorações */
         .tree {
             position: fixed;
             font-size: 2.2rem;
@@ -196,36 +171,88 @@
     </style>
 </head>
 <body>
+
     <div style="text-align:center; margin-top: 20px;">
-        <button onclick="togglePesquisa()" id="btnToggle">🎁 Mostrar pesquisa de IP</button>
+        <button onclick="togglePesquisa()" id="btnToggle"> Mostrar pesquisa de IP</button>
     </div>
+
+<div style="text-align:center; margin-top: 10px;">
+    <a href="tutorial.html">
+        <button style="
+            background:#1565c0;
+            color:white;
+            border:none;
+            padding:10px 22px;
+            border-radius:6px;
+            cursor:pointer;
+            margin-top:10px;
+        ">
+            ⚙️ Ativar acesso remoto
+        </button>
+    </a>
+</div>
+
+
+
+
+
 
     <div class="ip-bar" id="ipBar" style="display: none; margin-top: 10px;">
         <div class="input-area">
             <strong>🎄 Endereço IP:</strong>
-            <input id="ipInput" type="text" placeholder="ex: 192.168.1.100" onkeypress="ipKeyPress(event)">
+            <input id="ipInput" type="text" placeholder="ex: 192.168.1.1" onkeypress="ipKeyPress(event)">
             <div class="actions">
                 <button onclick="gerarLinks()">Gerar links</button>
             </div>
         </div>
-        <div class="note">Dica: tente primeiro <em>somente o IP</em>. Se não abrir, experimente as variações abaixo 🎅</div>
+        <div class="note">Dica: insira só o IP (ex: <code>192.168.1.1</code>) e pressione Gerar — o sistema monta as variações.</div>
 
         <table class="ip-links-table">
             <thead>
                 <tr><th>#</th><th>Endereço</th><th>Ações</th></tr>
             </thead>
             <tbody>
-                <tr><td>1º</td><td><a id="link-1" href="#">-</a></td><td><button id="open-1" class="btn">Abrir</button><button id="copy-1" class="btn">Copiar</button></td></tr>
-                <tr><td>2º</td><td><a id="link-2" href="#">-</a></td><td><button id="open-2" class="btn">Abrir</button><button id="copy-2" class="btn">Copiar</button></td></tr>
-                <tr><td>3º</td><td><a id="link-3" href="#">-</a></td><td><button id="open-3" class="btn">Abrir</button><button id="copy-3" class="btn">Copiar</button></td></tr>
-                <tr><td>4º</td><td><a id="link-4" href="#">-</a></td><td><button id="open-4" class="btn">Abrir</button><button id="copy-4" class="btn">Copiar</button></td></tr>
-                <tr><td>5º</td><td><a id="link-5" href="#">-</a></td><td><button id="open-5" class="btn">Abrir</button><button id="copy-5" class="btn">Copiar</button></td></tr>
+                <tr><td>1º</td><td><a id="link-1" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-1" class="btn">Abrir</button>
+                        <button id="copy-1" class="btn">Copiar</button>
+                    </td></tr>
+
+                <tr><td>2º</td><td><a id="link-2" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-2" class="btn">Abrir</button>
+                        <button id="copy-2" class="btn">Copiar</button>
+                    </td></tr>
+
+                <tr><td>3º</td><td><a id="link-3" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-3" class="btn">Abrir</button>
+                        <button id="copy-3" class="btn">Copiar</button>
+                    </td></tr>
+
+                <tr><td>4º</td><td><a id="link-4" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-4" class="btn">Abrir</button>
+                        <button id="copy-4" class="btn">Copiar</button>
+                    </td></tr>
+
+                <tr><td>5º</td><td><a id="link-5" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-5" class="btn">Abrir</button>
+                        <button id="copy-5" class="btn">Copiar</button>
+                    </td></tr>
+
+                <tr><td>6º</td><td><a id="link-6" href="#" target="_blank" rel="noopener">-</a></td>
+                    <td>
+                        <button id="open-6" class="btn">Abrir</button>
+                        <button id="copy-6" class="btn">Copiar</button>
+                    </td></tr>
             </tbody>
         </table>
     </div>
 
-    <div class="container">
-        <h1>ACESSO DAS NOSSAS ONTs</h1>
+  <div class="container">
+        <h1>ACESSO DAS ONTs</h1>
 
                 <div class="gallery">
             <div class="gallery-item">
@@ -361,77 +388,100 @@
         </div>
     </div>
 
+    <!-- (sua galeria continua igual, mantida sem alterações) -->
+
     <script>
 function togglePesquisa() {
     const ipBar = document.getElementById("ipBar");
     const btn = document.getElementById("btnToggle");
     if (ipBar.style.display === "none") {
         ipBar.style.display = "block";
-        btn.innerText = "🔽 Ocultar pesquisa de IP";
+        btn.innerText = " Ocultar pesquisa de IP";
     } else {
         ipBar.style.display = "none";
-        btn.innerText = "🔍 Mostrar pesquisa de IP";
+        btn.innerText = " Mostrar pesquisa de IP";
     }
 }
-</script>
 
-    <!-- 🎄 Árvores laterais -->
-    <div class="tree left">🎄</div>
-    <div class="tree right">🎄</div>
+function ipKeyPress(e) {
+    if (e.key === 'Enter') {
+        gerarLinks();
+    }
+}
 
-    <!-- ❄️ Neve animada -->
-    <script>
-        // Função do botão
-        function togglePesquisa() {
-            const ipBar = document.getElementById("ipBar");
-            const btn = document.getElementById("btnToggle");
-            if (ipBar.style.display === "none") {
-                ipBar.style.display = "block";
-                btn.innerText = "🔽 Ocultar pesquisa de IP";
-            } else {
-                ipBar.style.display = "none";
-                btn.innerText = "🎁 Mostrar pesquisa de IP";
-            }
-        }
+function copiarTexto(texto, botao) {
+    // copia o texto exato passado
+    navigator.clipboard.writeText(texto).then(() => {
+        const msg = document.createElement("span");
+        msg.innerText = " Copiado!";
+        msg.style.color = "green";
+        msg.style.marginLeft = "8px";
+        // se o botão estiver em uma célula, adiciona a mensagem logo após
+        botao.parentNode.appendChild(msg);
+        setTimeout(() => msg.remove(), 1400);
+    }).catch(() => {
+        alert('Não foi possível copiar para a área de transferência.');
+    });
+}
 
-        function copiarTexto(texto, botao) {
-            navigator.clipboard.writeText(texto).then(() => {
-                const msg = document.createElement("span");
-                msg.innerText = " Copiado!";
-                msg.style.color = "green";
-                msg.style.marginLeft = "8px";
-                botao.parentNode.appendChild(msg);
-                setTimeout(() => msg.remove(), 1400);
-            });
-        }
+function ensureProtocol(href) {
+    // se já começa com http:// ou https:// retorna como está
+    if (/^https?:\/\//i.test(href)) return href;
+    // caso contrário, adiciona http://
+    return 'http://' + href;
+}
 
-        function gerarLinks() {
-            const input = document.getElementById('ipInput');
-            const ip = input.value.trim();
-            if(!ip) return alert('Informe o endereço IP da ONT');
-            const variations = [ip, ip + ':8080', ip + '/config', ip + '/login.html', ip + '/config.html'];
-            for(let i = 0; i < 5; i++) {
-                const link = document.getElementById('link-' + (i+1));
-                const href = 'http://' + variations[i];
-                link.href = href;
-                link.innerText = variations[i];
-                document.getElementById('open-' + (i+1)).onclick = () => window.open(href, '_blank');
-                document.getElementById('copy-' + (i+1)).onclick = (e) => copiarTexto(variations[i], e.currentTarget);
-            }
-        }
+function gerarLinks() {
+    const input = document.getElementById('ipInput');
+    const ip = input.value.trim();
+    if (!ip) return alert('Informe o endereço IP da ONT (ex: 192.168.1.1)');
 
-        // Efeito neve
-        const snowCount = 30;
-        for(let i=0; i<snowCount; i++) {
-            const snow = document.createElement("div");
-            snow.classList.add("snowflake");
-            snow.innerHTML = "❄️";
-            snow.style.left = Math.random() * 100 + "vw";
-            snow.style.animationDuration = 8 + Math.random()*6 + "s";
-            snow.style.fontSize = (Math.random()*10 + 10) + "px";
-            snow.style.animationDelay = Math.random()*5 + "s";
-            document.body.appendChild(snow);
-        }
+    // variações na ordem que você pediu:
+    const variacoes = [
+        ip,                     // ip
+        ip + ':8080',           // ip:8080
+        ip + '/login.html',     // ip/login.html
+        ip + '/config',         // ip/config
+        'http://' + ip,         // http://ip
+        'https://' + ip         // https://ip
+    ];
+
+    for (let i = 0; i < variacoes.length; i++) {
+        const idx = i + 1;
+        const display = variacoes[i];
+        const a = document.getElementById('link-' + idx);
+        const openBtn = document.getElementById('open-' + idx);
+        const copyBtn = document.getElementById('copy-' + idx);
+
+        // link exibido (texto) — mostra exatamente a variação
+        a.innerText = display;
+
+        // href real para abrir: se já tiver protocolo, usa; se não, adiciona http://
+        let hrefToOpen = ensureProtocol(display);
+
+        // define href do <a> para que clique no link também funcione corretamente
+        a.href = hrefToOpen;
+
+        // abrir em nova aba
+        openBtn.onclick = () => window.open(hrefToOpen, '_blank', 'noopener');
+
+        // copiar o texto exatamente como exibido (sem forçar protocolo para as variações sem)
+        copyBtn.onclick = (e) => copiarTexto(display, e.currentTarget);
+    }
+}
+
+// ❄️ neve
+const snowCount = 30;
+for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement("div");
+    snow.classList.add("snowflake");
+    snow.innerHTML = "";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = 8 + Math.random() * 6 + "s";
+    snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+    snow.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(snow);
+}
     </script>
 
     <footer>

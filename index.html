@@ -171,26 +171,55 @@
     </style>
 </head>
 <body>
+<!-- BOTÕES OTIMIZADOS -->
+<div class="top-buttons">
+    <button onclick="togglePesquisa()" id="btnToggle" class="btn-top green">
+        🔍 Pesquisa de IP
+    </button>
 
-    <div style="text-align:center; margin-top: 20px;">
-        <button onclick="togglePesquisa()" id="btnToggle"> Mostrar pesquisa de IP</button>
-    </div>
-
-<div style="text-align:center; margin-top: 10px;">
     <a href="tutorial.html">
-        <button style="
-            background:#1565c0;
-            color:white;
-            border:none;
-            padding:10px 22px;
-            border-radius:6px;
-            cursor:pointer;
-            margin-top:10px;
-        ">
-            ⚙️ Ativar acesso remoto
+        <button class="btn-top blue">
+            ⚙️Habilitar acesso remoto
         </button>
     </a>
 </div>
+
+<style>
+    .top-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .btn-top {
+        padding: 12px 22px;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.2s;
+        width: 220px;
+        text-align: center;
+    }
+
+    .btn-top:hover {
+        transform: scale(1.06);
+        opacity: 0.9;
+    }
+
+    .btn-top.green {
+        background: #2e7d32;
+        color: white;
+    }
+
+    .btn-top.blue {
+        background: #1565c0;
+        color: white;
+    }
+</style>
 
 
 

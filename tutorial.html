@@ -1,1 +1,199 @@
-<h1>aqui vou coloca o passo-a-passo de como habilitar o acesso remoto  </h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial – Ativar Acesso Remoto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0e0e0e;
+            font-family: 'Poppins', sans-serif;
+            color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            background: #b71c1c;
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #ff5252;
+            border-left: 5px solid #ff5252;
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .step-block {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff7676;
+            margin-bottom: 12px;
+        }
+
+        .step-text {
+            font-size: 15px;
+            color: #dcdcdc;
+            margin-bottom: 15px;
+        }
+
+        .step-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            border: 2px solid #ff5252;
+        }
+
+        .btn-back {
+            display: block;
+            width: 240px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 14px;
+            background: #2e7d32;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Tutorial – Como Ativar Acesso Remoto
+</header>
+
+<div class="container">
+
+    <!-- HUAWEI -->
+    <h2>📡 HUAWEI – HG8145V5 / HG8145V5-V2</h2>
+
+    <div class="step-block">
+        <div class="step-title">1. Faça login na ONT</div>
+        <div class="step-text">
+            Use o usuário e senha padrão:<br>
+            <strong>Usuário:</strong> telecomadmin<br>
+            <strong>Senha:</strong> admintelecom
+        </div>
+        <img class="step-img" src="https://i.postimg.cc/59Bq3QVB/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">2. Clique em “Avançado”</div>
+        <div class="step-text">Essa opção libera o acesso às configurações avançadas da ONT.</div>
+        <img class="step-img" src="https://i.postimg.cc/QC8BStQ5/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">3. Vá até “Security”</div>
+        <div class="step-text">Dentro do menu avançado, localize e entre na aba <strong>Security</strong>.</div>
+        <img class="step-img" src="https://i.postimg.cc/W32bcydz/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">4. Acesse “Precise Device Access Control”</div>
+        <div class="step-text">Esta área controla quais portas podem ser acessadas externamente.</div>
+        <img class="step-img" src="https://i.postimg.cc/TwYG4WsG/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">5. Clique em “New”</div>
+        <div class="step-text">Você criará uma nova regra de liberação de acesso externo.</div>
+        <img class="step-img" src="https://i.postimg.cc/Ls0RGsFv/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">6. Configure o acesso remoto</div>
+        <div class="step-text">
+            Ajuste exatamente assim:<br><br>
+            • <strong>Port Type:</strong> WAN<br>
+            • Ative: <strong>HTTP</strong><br><br>
+            Depois clique em <strong>Apply</strong>.
+        </div>
+        <img class="step-img" src="https://i.postimg.cc/FKYwdgwp/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">7. Acesso remoto ativado!</div>
+        <div class="step-text">A partir de agora a ONT aceita acesso via IP público.</div>
+        <img class="step-img" src="https://i.postimg.cc/nhPPJ9M3/image.png">
+    </div>
+
+
+
+
+    <!-- NOKIA NOVA INTERFACE -->
+    <h2>📡 NOKIA – Nova Interface</h2>
+
+    <div class="step-block">
+        <div class="step-title">1. Faça login</div>
+        <div class="step-text">
+            Usuário padrão:<br>
+            <strong>AdminGPON</strong><br>
+            Senha: <strong>ALC#FGU</strong>
+        </div>
+        <img class="step-img" src="https://i.postimg.cc/pX8fT90Y/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">2. Vá até Security → Access Control</div>
+        <div class="step-text">Aqui ficam todas as permissões de acesso remoto.</div>
+        <img class="step-img" src="https://i.postimg.cc/RhtHN8T0/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">3. Ative “Enable Trusted Network”</div>
+        <div class="step-text">Isso libera redes confiáveis a acessar a ONT externamente.</div>
+        <img class="step-img" src="https://i.postimg.cc/HLL8QjtN/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">4. Habilite HTTPS em “Allow”</div>
+        <div class="step-text">Esta etapa libera completamente o acesso externo seguro.</div>
+        <img class="step-img" src="https://i.postimg.cc/05XWmJd4/image.png">
+    </div>
+
+    <div class="step-block">
+        <div class="step-title">5. Clique em “Save”</div>
+        <div class="step-text">As configurações serão aplicadas imediatamente.</div>
+        <img class="step-img" src="https://i.postimg.cc/Qt4bpR50/image.png">
+    </div>
+
+</div>
+
+<a class="btn-back" href="index.html">⬅️ Voltar para a Página Inicial</a>
+
+</body>
+</html>
